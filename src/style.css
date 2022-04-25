@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+ body {
+ background-color: #ffcfdf;
+ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ min-height: 100vh;
+ scroll-behavior: smooth;
+}
+
+.container {
+ margin:  2rem auto;
+ width: 70%;
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.container h1 {
+ font-size: 40px;
+}
+
+.container button {
+ outline: none;
+ border: 1px solid black;
+ background-color: white;
+ padding: 1rem;
+ width: 90%;
+ font-size: 15px;
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container button:hover {
+ background-color: black;
+ color: white;
+}
+
+.header {
+ padding: 1rem;
+ width: 90%;
+ margin: auto;
+}
+
+.header input {
+ width: 100%;
+ font-size:18px;
+ padding:10px 10px 10px 5px;
+ display:block;
+ border:none;
+ border-bottom:1px solid #757575;
+ outline: none;
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.tasks {
+ display: flex;
+ flex-direction: column;
+ width: 90%;
+ padding: 1rem;
+ margin: 1rem 0;
+}
+
+.tasks .one-task {
+ background-color: rgba(30, 111, 142, 0.2);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border: 1px solid black;
+ padding: 12px;
+ margin: 5px 0;
+}
+
+.tasks .one-task  span {
+ color: red;
+ font-size: 20px;
+ cursor: pointer;
+}
+
+.tasks .one-task  span:hover {
+ background-color: rgba(30, 111, 142, 0.2);
+ border: 1px solid #000;
+ border-radius: 10%;
+ padding: 3px;
+}
+
+.tasks .one-task .data {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.tasks .one-task .data p {
+ margin-left: 6px;
+ font-size: 20px;
+}
+
+footer {
+ border: 1px solid black;
+ width: 100%;
+ padding: 1rem;
+ text-align: center;
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ position: absolute;
+ bottom: 0;
+}
+
+.checked {
+ text-decoration: line-through;
+ color: gray;
+}
