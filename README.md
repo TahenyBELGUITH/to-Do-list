@@ -4,7 +4,7 @@
 
 > To-Do list project allows users to add, delete, and edit tasks .
 
-<img src="./shot%202.png align='center'>
+<img src="./src/shot1.png" align='center'>
 </img>
 
 ## Built With
