@@ -2,18 +2,9 @@ import './style.css';
 
 const taskSection = document.querySelector('.tasks');
 const userTask = document.querySelector('.user-task');
-const tasksArray = [{
-  id: 0,
-  task: 'learn JS',
-  status: false,
-},
-{
-  id: 1,
-  task: 'learn REACT',
-  status: false,
-}];
-const MOOD = 'CREATE';
-
+const tasksArray = JSON.parse(localStorage.getItem('task')) || [];
+let MOOD = 'CREATE';
+let tmp;
 class Task {
   constructor(userTask) {
     this.id = tasksArray.length;
@@ -22,7 +13,7 @@ class Task {
   }
 }
 
-function displayTask(tasksArray) {
+const displayTask = (tasksArray) => {
   taskSection.innerHTML = '';
   for (let i = 0; i < tasksArray.length; i += 1) {
     taskSection.innerHTML += `
@@ -35,17 +26,25 @@ function displayTask(tasksArray) {
   </div>
   `;
   }
-}
+};
 
-function addTask() {
+const addTask = () => {
   if (MOOD === 'CREATE') {
     const task = new Task(userTask);
     tasksArray.push(task);
     localStorage.setItem('task', JSON.stringify(tasksArray));
     displayTask(tasksArray);
     userTask.value = '';
+  } else {
+    tasksArray[tmp].task = userTask.value;
+    localStorage.setItem('task', JSON.stringify(tasksArray));
+    displayTask(tasksArray);
+    userTask.value = '';
+    console.log(tasksArray[tmp].task);
+    MOOD = 'CREATE';
+    userTask.blur();
   }
-}
+};
 
 userTask.addEventListener('keyup', (e) => {
   if (e.keyCode === 13 && userTask.value !== '') {
@@ -55,3 +54,11 @@ userTask.addEventListener('keyup', (e) => {
 });
 
 displayTask(tasksArray);
+
+taskSection.addEventListener('click', (e) => {
+  if (e.target.classList.contains('span')) {
+    tasksArray.splice(e.target.parentElement, 1);
+    displayTask(tasksArray);
+    localStorage.setItem('task', JSON.stringify(tasksArray));
+  }
+});
