@@ -61,4 +61,11 @@ taskSection.addEventListener('click', (e) => {
     displayTask(tasksArray);
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
+
+   if(e.target.classList.contains('description')){
+    userTask.focus()
+    userTask.value = e.target.innerHTML;
+    MOOD = 'UPDATE'
+    tmp = e.target.id
+  }
 });
