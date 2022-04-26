@@ -7,7 +7,7 @@ let MOOD = 'CREATE';
 let tmp;
 class Task {
   constructor(userTask) {
-    this.id = tasksArray.length +1;
+    this.id = tasksArray.length + 1;
     this.task = userTask.value;
     this.status = false;
   }
@@ -71,7 +71,7 @@ const updateIndex = () => {
 taskSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('span')) {
     tasksArray.splice(e.target.parentElement, 1);
-    updateIndex()
+    updateIndex();
     displayTask(tasksArray);
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
