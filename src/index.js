@@ -40,7 +40,6 @@ const addTask = () => {
     localStorage.setItem('task', JSON.stringify(tasksArray));
     displayTask(tasksArray);
     userTask.value = '';
-    console.log(tasksArray[tmp].task);
     MOOD = 'CREATE';
     userTask.blur();
   }
@@ -62,10 +61,10 @@ taskSection.addEventListener('click', (e) => {
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
 
-   if(e.target.classList.contains('description')){
-    userTask.focus()
+  if (e.target.classList.contains('description')) {
+    userTask.focus();
     userTask.value = e.target.innerHTML;
-    MOOD = 'UPDATE'
-    tmp = e.target.id
+    MOOD = 'UPDATE';
+    tmp = e.target.id;
   }
 });
