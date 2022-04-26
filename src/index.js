@@ -7,7 +7,7 @@ let MOOD = 'CREATE';
 let tmp;
 class Task {
   constructor(userTask) {
-    this.id = tasksArray.length;
+    this.id = tasksArray.length +1;
     this.task = userTask.value;
     this.status = false;
   }
@@ -53,10 +53,25 @@ userTask.addEventListener('keyup', (e) => {
 });
 
 displayTask(tasksArray);
+const updateIndex = () => {
+  for (let i = 0; i < tasksArray.length; i += 1) {
+    tasksArray[i].id = i + 1;
+  }
+  tasksArray.sort((a, b) => {
+    if (a.id < b.id) {
+      return -1;
+    }
+    if (a.id > b.id) {
+      return 1;
+    }
+    return 0;
+  });
+};
 
 taskSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('span')) {
     tasksArray.splice(e.target.parentElement, 1);
+    updateIndex()
     displayTask(tasksArray);
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
