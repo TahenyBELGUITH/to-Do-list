@@ -1,6 +1,6 @@
-import { tasksArray } from './variables.js';
+import { tasksArray } from './variables.js'; //eslint-disable-line
 
-export class Task {
+export default class Task {
   constructor(userTask) {
     this.id = tasksArray.length + 1;
     this.task = userTask.value;

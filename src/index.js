@@ -1,7 +1,7 @@
 import './style.css';
 import { userTask, tasksArray } from './variables.js';
 import { addTask, displayTask, taskSection } from './addTask.js';
-import { updateIndex } from './updateIndex.js';
+import updateIndex from './updateIndex.js';
 
 userTask.addEventListener('keyup', (e) => {
   if (e.keyCode === 13 && userTask.value !== '') {
@@ -19,13 +19,6 @@ taskSection.addEventListener('click', (e) => {
     displayTask(tasksArray);
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
-
-  // if (e.target.classList.contains('description')) {
-  //   userTask.focus();
-  //   userTask.value = e.target.innerHTML;
-  //   MOOD = 'UPDATE'
-  //   tmp = e.target.id;
-  // }
 });
 
 taskSection.addEventListener('change', (e) => {
@@ -36,10 +29,3 @@ taskSection.addEventListener('change', (e) => {
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
 });
-
-// clearAllCompleted.addEventListener('click', () => {
-//   tasksArray = tasksArray.filter((task) => task.status === false);
-//   updateIndex();
-//   displayTask(tasksArray);
-//   localStorage.setItem('task', JSON.stringify(tasksArray));
-// });

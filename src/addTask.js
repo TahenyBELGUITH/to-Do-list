@@ -1,8 +1,8 @@
-import { userTask, tasksArray } from './variables.js';
-import { Task } from './task.js';
+import { userTask, tasksArray } from './variables.js'; //eslint-disable-line
+import  Task  from './task.js';//eslint-disable-line
 
-export let MOOD = 'CREATE';
-export let tmp;
+export let MOOD = 'CREATE';//eslint-disable-line
+export let tmp = '';//eslint-disable-line
 export const taskSection = document.querySelector('.tasks');
 
 export const displayTask = (tasksArray) => {

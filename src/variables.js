@@ -1,10 +1,7 @@
-// export const taskSection = document.querySelector('.tasks');
-// export let tmp;
-import { displayTask } from './addTask.js';
-import { updateIndex } from './updateIndex.js';
-
+import { displayTask } from './addTask.js'; //eslint-disable-line
+import { updateIndex } from './updateIndex.js'; //eslint-disable-line
 export const userTask = document.querySelector('.user-task');
-export let tasksArray = JSON.parse(localStorage.getItem('task')) || [];
+export let tasksArray = JSON.parse(localStorage.getItem('task')) || [];//eslint-disable-line
 export const clearAllCompleted = document.querySelector('.deleteAll');
 
 clearAllCompleted.addEventListener('click', () => {

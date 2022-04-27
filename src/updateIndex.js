@@ -1,6 +1,6 @@
-import { tasksArray } from './variables.js';
+import { tasksArray } from './variables.js'; //eslint-disable-line
 
-export const updateIndex = () => {
+export default function updateIndex() {
   for (let i = 0; i < tasksArray.length; i += 1) {
     tasksArray[i].id = i + 1;
   }
@@ -13,4 +13,4 @@ export const updateIndex = () => {
     }
     return 0;
   });
-};
+}
