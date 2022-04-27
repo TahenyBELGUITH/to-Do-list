@@ -30,6 +30,7 @@ body {
 }
 
 .container button {
+  cursor: pointer;
   outline: none;
   border: 1px solid black;
   background-color: white;
