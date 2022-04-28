@@ -3,22 +3,6 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
-  devServer: {
-    static: './dist',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      title: 'to-Do-List',
-    }),
-  ],
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-    publicPath: '/',
-  },
   module: {
     rules: [
       {
@@ -42,5 +26,21 @@ module.exports = {
         use: ['xml-loader'],
       },
     ],
+  },
+  entry: './src/index.js',
+  devServer: {
+    static: './dist',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      title: 'to-Do-List',
+    }),
+  ],
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, './dist'),
+    clean: true,
+    publicPath: '/',
   },
 };
