@@ -18,10 +18,14 @@ const displayTask = (tasksArray) => {
   taskSection.innerHTML = '';
   for (let i = 0; i < tasksArray.length; i += 1) {
     taskSection.innerHTML += `
-  <div class="one-task">
+  <div class="one-task" id=${i}>
     <div class="data">
-      <input id=${i} class="checkBoxClass" type="checkbox" ${tasksArray[i].status ? 'checked' : ''}>
-      <p id=${i} class="${tasksArray[i].status ? 'checked' : ''} description">${tasksArray[i].task}</p>
+      <input id=${i} class="checkBoxClass" type="checkbox" ${
+  tasksArray[i].status ? 'checked' : ''
+}>
+      <p id=${i} class="${tasksArray[i].status ? 'checked' : ''} description">${
+  tasksArray[i].task
+}</p>
     </div>
     <span class="span">&cross;</span>
   </div>
@@ -71,9 +75,9 @@ const updateIndex = () => {
 
 taskSection.addEventListener('click', (e) => {
   if (e.target.classList.contains('span')) {
-    tasksArray.splice(e.target.parentElement, 1);
-    updateIndex();
+    tasksArray.splice(e.target.parentElement.id, 1);
     displayTask(tasksArray);
+    updateIndex();
     localStorage.setItem('task', JSON.stringify(tasksArray));
   }
 
