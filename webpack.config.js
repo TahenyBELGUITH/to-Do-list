@@ -1,5 +1,8 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { resolve } from 'path';
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+// import { resolve } from 'path';
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 export const mode = 'development';
 export const entry = './src/index.js';
@@ -14,7 +17,8 @@ export const plugins = [
 ];
 export const output = {
   filename: 'main.js',
-  path: resolve(__dirname, 'dist'),
+  // path: resolve(__dirname, 'dist'),
+  path: path.resolve(__dirname, './dist'),
   clean: true,
   publicPath: '/',
 };
