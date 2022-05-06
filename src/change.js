@@ -1,4 +1,4 @@
-import { taskSection, tasksArray } from './index.js'//eslint-disable-line
+import { taskSection, tasksArray } from './task.js'//eslint-disable-line
 
 export default function change() {
   taskSection.addEventListener('change', (event) => {
