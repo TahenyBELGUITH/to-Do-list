@@ -16,7 +16,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://tahenybelguith.github.io/to-Do-list/)
+[Live Demo Link](https://melodic-malasada-3d18c8.netlify.app/)
 
 
 ## Getting Started
